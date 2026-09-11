@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          I LOVE YOU ADEK ADIKAAA SAYANGGGGGG
+          I LOVE YOU ADIKAA
         </a>
       </header>
     </div>
