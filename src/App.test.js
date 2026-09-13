@@ -25,3 +25,15 @@ test('renders the footer', () => {
   });
   expect(footer).toBeInTheDocument();
 });
+
+test('renders the card container', () => {
+  render(<App />);
+  const container = screen.getByText(/I LOVE YOU/i).closest('.romantic-card');
+  expect(container).toHaveClass('romantic-card');
+});
+
+test('renders the heart symbol', () => {
+  render(<App />);
+  const hearts = screen.getAllByText('♥');
+  expect(hearts.length).toBeGreaterThan(0);
+});
