@@ -7,15 +7,15 @@ test('renders I LOVE YOU heading', () => {
   expect(heading).toBeInTheDocument();
 });
 
-test('renders ADIKAA heading', () => {
+test('renders ADIKA heading', () => {
   render(<App />);
-  const heading = screen.getByText(/ADIKAA/i);
+  const heading = screen.getByText(/ADIKA/i);
   expect(heading).toBeInTheDocument();
 });
 
 test('renders the romantic message', () => {
   render(<App />);
-  expect(screen.getByText(/somehow I found you/i)).toBeInTheDocument();
+  expect(screen.getByText(/my heart found its home in you/i)).toBeInTheDocument();
 });
 
 test('renders the footer', () => {

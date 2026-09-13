@@ -33,20 +33,18 @@ function App() {
 
         <div className="heart">♥</div>
 
-        <h1>For My Favorite Person</h1>
+        <h1>To My Dearest</h1>
 
         <p className="message">
-          In a world full of people,
+          Among all the souls in this world,
           <br />
-          somehow I found you.
+          my heart found its home in you.
         </p>
 
         <p className="message">
-          And honestly...
+          With every sunrise,
           <br />
-          you're the one I want to
-          <br />
-          keep choosing every day. ❤️
+          I choose you—now and always. ❤️
         </p>
 
         <div className="divider">
@@ -56,7 +54,7 @@ function App() {
         </div>
 
         <h2 className="love-you">I LOVE YOU</h2>
-        <h3 className="name-tag">ADIKAA</h3>
+        <h3 className="name-tag">ADIKA</h3>
 
         <p className="footer">Forever &amp; always ♥</p>
       </div>
