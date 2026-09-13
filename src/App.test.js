@@ -7,9 +7,9 @@ test('renders I LOVE YOU heading', () => {
   expect(heading).toBeInTheDocument();
 });
 
-test('renders ADIKAA heading', () => {
+test('renders ADIKA heading', () => {
   render(<App />);
-  const heading = screen.getByText(/ADIKAA/i);
+  const heading = screen.getByText(/ADIKA/i);
   expect(heading).toBeInTheDocument();
 });
 
