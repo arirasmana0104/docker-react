@@ -54,7 +54,7 @@ function App() {
         </div>
 
         <h2 className="love-you">I LOVE YOU</h2>
-        <h3 className="name-tag">ADIKA</h3>
+        <h3 className="name-tag">MY ADIKA</h3>
 
         <p className="footer">Forever &amp; always ♥</p>
       </div>
