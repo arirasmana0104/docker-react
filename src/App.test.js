@@ -20,5 +20,8 @@ test('renders the romantic message', () => {
 
 test('renders the footer', () => {
   render(<App />);
-  expect(screen.getByText(/Forever & always/i)).toBeInTheDocument();
+  const footer = screen.getByText((content, element) => {
+    return element.tagName.toLowerCase() === 'p' && /forever\s*&\s*always/i.test(content);
+  });
+  expect(footer).toBeInTheDocument();
 });
