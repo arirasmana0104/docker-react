@@ -15,7 +15,7 @@ test('renders ADIKAA heading', () => {
 
 test('renders the romantic message', () => {
   render(<App />);
-  expect(screen.getByText(/somehow I found you/i)).toBeInTheDocument();
+  expect(screen.getByText(/my heart found its home in you/i)).toBeInTheDocument();
 });
 
 test('renders the footer', () => {
