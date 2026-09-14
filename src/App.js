@@ -53,7 +53,7 @@ function App() {
           <span />
         </div>
 
-        <h2 className="love-you">I LOVE YOU</h2>
+        <h2 className="love-you">I love you mad</h2>
         <h3 className="name-tag">MY CLINGY ADIKA</h3>
 
         <p className="footer">Forever &amp; always ♥</p>
