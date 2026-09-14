@@ -53,6 +53,7 @@ function App() {
 
         <h2 className="love-you">I love you</h2>
         <h3 className="name-tag">MY CLINGY ADIKA</h3>
+        <p className="signature-line">for you, always</p>
 
         <p className="footer">Forever &amp; always ♥</p>
       </main>

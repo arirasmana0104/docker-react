@@ -120,11 +120,21 @@ h1 {
 }
 
 .name-tag {
-  margin: 0 0 18px;
-  font-size: 1.1rem;
-  letter-spacing: 0.2em;
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #bfdbfe;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+}
+
+.signature-line {
+  margin: 0 0 18px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dbeafe;
+  opacity: 0.9;
 }
 
 .footer {
