@@ -10,7 +10,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #fff7fb 0%, #f5f3ff 50%, #eef6ff 100%);
+  background: radial-gradient(circle at top, #7dd3fc 0%, #2563eb 28%, #0f172a 100%);
 }
 
 .card-container {
@@ -22,7 +22,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  color: #4c1d95;
+  color: #eff6ff;
 }
 
 .floating-hearts {
@@ -35,8 +35,9 @@ body {
 .heart-particle {
   position: absolute;
   top: 100%;
-  opacity: 0.5;
-  color: rgba(236, 72, 153, 0.7);
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
   animation-name: floatUp;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -47,11 +48,11 @@ body {
     transform: translateY(0) scale(0.8);
     opacity: 0;
   }
-  20% {
-    opacity: 0.7;
+  18% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(-110vh) scale(1.2);
+    transform: translateY(-120vh) scale(1.3);
     opacity: 0;
   }
 }
@@ -59,78 +60,79 @@ body {
 .romantic-card {
   position: relative;
   z-index: 1;
-  width: min(100%, 420px);
-  padding: 36px 28px;
+  width: min(100%, 440px);
+  padding: 40px 30px;
   text-align: center;
-  color: #4c1d95;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(147, 197, 253, 0.4);
-  border-radius: 20px;
-  box-shadow: 0 14px 30px rgba(76, 29, 149, 0.08);
-  backdrop-filter: blur(8px);
+  color: #eff6ff;
+  background: rgba(15, 23, 42, 0.42);
+  border: 1px solid rgba(191, 219, 254, 0.35);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(14, 116, 144, 0.35);
+  backdrop-filter: blur(12px);
 }
 
 .heart {
-  font-size: 2.3rem;
+  font-size: 2.8rem;
   line-height: 1;
-  color: #ec4899;
-  margin-bottom: 8px;
+  color: #f9a8d4;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(249, 168, 212, 0.8);
 }
 
 h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #312e81;
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #f8fbff;
 }
 
 .message {
-  margin: 14px 0;
+  margin: 16px 0;
   font-size: 1rem;
-  line-height: 1.7;
-  color: #4338ca;
+  line-height: 1.8;
+  color: #dbeafe;
 }
 
 .divider {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 24px 0;
+  gap: 14px;
+  margin: 28px 0;
 }
 
 .divider span:not(.divider-heart) {
   flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(147, 197, 253, 0.8), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.9), transparent);
 }
 
 .divider-heart {
-  color: #f472b6;
-  font-size: 1rem;
+  color: #f9a8d4;
+  font-size: 1.1rem;
 }
 
 .love-you {
-  margin: 0 0 6px;
-  font-size: clamp(2.1rem, 3vw, 2.7rem);
-  font-weight: 700;
-  color: #312e81;
+  margin: 0 0 8px;
+  font-size: clamp(2.3rem, 3vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
 }
 
 .name-tag {
   margin: 0 0 18px;
-  font-size: 1.05rem;
-  letter-spacing: 0.18em;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #4f46e5;
+  color: #bfdbfe;
 }
 
 .footer {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-style: italic;
-  color: #4f46e5;
-  opacity: 0.8;
+  color: #e0f2fe;
+  opacity: 0.9;
 }
 
 @media (max-width: 480px) {
@@ -146,6 +148,6 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   .heart-particle {
     animation: none;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 }
