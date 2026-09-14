@@ -16,7 +16,13 @@ jobs:
       - run: npm run build
 
       - name: Generate deployment package
-        run: zip -r deploy.zip . -x '*.git*'
+        run: |
+          mkdir -p deploy
+          cp -R build deploy/build
+          cp package.json package-lock.json deploy/
+          cp server.js deploy/
+          cd deploy
+          zip -r ../deploy.zip .
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
