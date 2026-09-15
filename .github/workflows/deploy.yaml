@@ -20,7 +20,7 @@ jobs:
           mkdir -p deploy
           cp -R build deploy/build
           cp package.json package-lock.json deploy/
-          cp server.js deploy/
+          cp server.js Dockerfile deploy/
           cd deploy
           zip -r ../deploy.zip .
 
