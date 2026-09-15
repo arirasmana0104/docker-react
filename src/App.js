@@ -1,16 +1,17 @@
 import './App.css';
 
 function App() {
-  const hearts = Array.from({ length: 18 });
+  const hearts = Array.from({ length: 7 });
 
   return (
     <div className="card-container">
-      <div className="floating-hearts">
+      <div className="floating-hearts" aria-hidden="true">
         {hearts.map((_, i) => {
-          const left = (i * 53) % 100;
-          const delay = (i % 9) * 1.1;
-          const duration = 9 + (i % 5) * 2;
-          const size = 0.9 + (i % 4) * 0.4;
+          const left = 10 + i * 13;
+          const delay = i * 1.1;
+          const duration = 7 + (i % 4) * 2;
+          const size = 0.9 + (i % 3) * 0.35;
+
           return (
             <span
               key={i}
@@ -22,17 +23,14 @@ function App() {
                 fontSize: `${size}rem`,
               }}
             >
-              {i % 3 === 0 ? '♥' : i % 3 === 1 ? '💖' : '✨'}
+              ♥
             </span>
           );
         })}
       </div>
 
-      <div className="romantic-card">
-        <div className="card-glow" />
-
+      <main className="romantic-card">
         <div className="heart">♥</div>
-
         <h1>To My Dearest</h1>
 
         <p className="message">
@@ -44,20 +42,21 @@ function App() {
         <p className="message">
           With every sunrise,
           <br />
-          I choose you—now and always. ❤️
+          I choose you—now and always.
         </p>
 
-        <div className="divider">
+        <div className="divider" aria-hidden="true">
           <span />
           <span className="divider-heart">♥</span>
           <span />
         </div>
 
-        <h2 className="love-you">I LOVE YOU</h2>
-        <h3 className="name-tag">ADIKA</h3>
+        <h2 className="love-you">I love you</h2>
+        <h3 className="name-tag">MY CLINGY ADIKA</h3>
+        <p className="signature-line">for you, always</p>
 
         <p className="footer">Forever &amp; always ♥</p>
-      </div>
+      </main>
     </div>
   );
 }

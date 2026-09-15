@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders I LOVE YOU heading', () => {
+test('renders the love heading', () => {
   render(<App />);
-  const heading = screen.getByText(/I LOVE YOU/i);
+  const heading = screen.getByText(/I love you/i);
   expect(heading).toBeInTheDocument();
 });
 
-test('renders ADIKA heading', () => {
+test('renders MY CLINGY ADIKA heading', () => {
   render(<App />);
-  const heading = screen.getByText(/ADIKA/i);
+  const heading = screen.getByText(/MY CLINGY ADIKA/i);
   expect(heading).toBeInTheDocument();
 });
 
@@ -24,4 +24,16 @@ test('renders the footer', () => {
     return element.tagName.toLowerCase() === 'p' && /forever\s*&\s*always/i.test(content);
   });
   expect(footer).toBeInTheDocument();
+});
+
+test('renders the card container', () => {
+  render(<App />);
+  const container = screen.getByText(/I LOVE YOU/i).closest('.romantic-card');
+  expect(container).toHaveClass('romantic-card');
+});
+
+test('renders the heart symbol', () => {
+  render(<App />);
+  const hearts = screen.getAllByText('♥');
+  expect(hearts.length).toBeGreaterThan(0);
 });
