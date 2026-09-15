@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #7dd3fc 0%, #2563eb 28%, #0f172a 100%);
 }
 
 .card-container {
@@ -18,121 +23,158 @@ body {
   justify-content: center;
   padding: 24px;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffc0d9, #ffe4f0);
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #eff6ff;
 }
 
-/* Minimal background - no animation */
 .floating-hearts {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
-  display: none;
 }
 
 .heart-particle {
-  display: none;
+  position: absolute;
+  top: 100%;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+  animation-name: floatUp;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-/* ---------- Card ---------- */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.3);
+    opacity: 0;
+  }
+}
+
 .romantic-card {
   position: relative;
-  z-index: 2;
-  max-width: 420px;
-  width: 100%;
-  padding: 42px 32px;
+  z-index: 1;
+  width: min(100%, 440px);
+  padding: 40px 30px;
   text-align: center;
-  color: #6b2038;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  border: 2px solid #ff8fab;
-  box-shadow: 0 8px 24px rgba(214, 51, 108, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #eff6ff;
+  background: rgba(15, 23, 42, 0.42);
+  border: 1px solid rgba(191, 219, 254, 0.35);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(14, 116, 144, 0.35);
+  backdrop-filter: blur(12px);
 }
 
-.romantic-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(214, 51, 108, 0.3);
-}
-
-.card-glow {
-  display: none;
-}
-
-/* ---------- Heart icon ---------- */
 .heart {
-  font-size: 2.5rem;
-  color: #ff4d6d;
-  margin-bottom: 8px;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: #f9a8d4;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(249, 168, 212, 0.8);
 }
 
-/* ---------- Typography ---------- */
 h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.1rem;
-  margin: 4px 0 20px;
-  color: #d6336c;
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #f8fbff;
 }
 
 .message {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  font-weight: 300;
-  margin: 14px 0;
-  color: #7a2e46;
+  margin: 16px 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #dbeafe;
 }
 
 .divider {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 26px 0;
+  gap: 14px;
+  margin: 28px 0;
 }
 
 .divider span:not(.divider-heart) {
   flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #ff8fab, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.9), transparent);
 }
 
 .divider-heart {
-  color: #ff4d6d;
+  color: #f9a8d4;
   font-size: 1.1rem;
 }
 
 .love-you {
   font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  margin: 6px 0 4px;
-  font-weight: 700;
-  color: #ff4d6d;
+  margin: 0 0 8px;
+  font-size: clamp(2.3rem, 3vw, 3rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2s infinite;
+  text-shadow: 0 0 30px rgba(255, 20, 147, 0.5);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
 }
 
 .name-tag {
-  font-size: 1.4rem;
-  letter-spacing: 4px;
-  font-weight: 600;
-  color: #b3184e;
-  margin: 0 0 20px;
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.6);
+}
+
+.signature-line {
+  margin: 0 0 18px;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dbeafe;
+  opacity: 0.9;
 }
 
 .footer {
-  font-size: 0.9rem;
+  margin: 0;
+  font-size: 0.92rem;
   font-style: italic;
-  color: #a24866;
-  opacity: 0.85;
-  margin-top: 10px;
+  color: #e0f2fe;
+  opacity: 0.9;
 }
 
 @media (max-width: 480px) {
+  .card-container {
+    padding: 18px;
+  }
+
   .romantic-card {
-    padding: 36px 22px;
+    padding: 30px 20px;
   }
-  h1 {
-    font-size: 1.7rem;
-  }
-  .love-you {
-    font-size: 2.3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart-particle {
+    animation: none;
+    opacity: 0.5;
   }
 }
