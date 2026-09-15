@@ -12,9 +12,17 @@ jobs:
       #      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - run: docker build -t cygnetops/react-test -f Dockerfile.dev .
       - run: docker run -e CI=true cygnetops/react-test npm test
+      - run: npm ci
+      - run: npm run build
 
       - name: Generate deployment package
-        run: zip -r deploy.zip . -x '*.git*'
+        run: |
+          mkdir -p deploy
+          cp -R build deploy/build
+          cp package.json package-lock.json deploy/
+          cp server.js deploy/
+          cd deploy
+          zip -r ../deploy.zip .
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v22
